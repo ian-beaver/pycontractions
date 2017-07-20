@@ -9,7 +9,7 @@ setup(
     description="Intelligently expand and create contractions in English text leveraging grammar checking and Word Mover's Distance.",
     author="Ian Beaver, Next IT Corp",
     author_email="ibeaver@nextit.com",
-    url="https://github.com/ian-beaver/",
+    url="https://github.com/ian-beaver/pycontractions",
     license="BSD",
     packages=find_packages(),
     long_description=open("README.rst").read(),
