@@ -106,14 +106,15 @@ contextual_contractions = {
     re.compile(r"\bhe'?s\b", re.I | re.U): ["he has", "he is"],
     re.compile(r"\bhow'?s\b", re.I | re.U): ["how has", "how is", "how does"],
     # "id" is a common abbreviation for Identification.
-    # If this abbrevaiation does NOT appear in your data add the "?"
+    # If this abbreviation does NOT appear in your data add the "?"
     re.compile(r"\bI'd\b", re.I | re.U): ["I had", "I would"],
     re.compile(r"\bI'll\b", re.I | re.U): ["I shall", "I will"],
     re.compile(r"\bI'?ll'?ve\b", re.I | re.U): ["I shall have", "I will have"],
     re.compile(r"\bit'?d\b", re.I | re.U): ["it had", "it would"],
     re.compile(r"\bit'?ll\b", re.I | re.U): ["it shall", "it will"],
     re.compile(r"\bit'?ll'?ve\b", re.I | re.U): ["it shall have", "it will have"],
-    re.compile(r"\bit'?s\b", re.I | re.U): ["it has", "it is"],
+    # Possessive form does not have apostrophe
+    re.compile(r"\bit's\b", re.I | re.U): ["it has", "it is"],
     re.compile(r"\bshe'?d\b", re.I | re.U): ["she had", "she would"],
     re.compile(r"\bshe'll\b", re.I | re.U): ["she shall", "she will"],
     re.compile(r"\bshe'?ll'?ve\b", re.I | re.U): ["she shall have", "she will have"],
