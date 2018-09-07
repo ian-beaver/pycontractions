@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-__version_info__ = 1, 0, 1
+__version_info__ = 1, 0, 2
 __version__ = '.'.join(map(str, __version_info__))
 
 setup(
@@ -13,7 +13,7 @@ setup(
     license="BSD",
     packages=find_packages(),
     long_description=open("README.rst").read(),
-    install_requires=["gensim>=2.0", "language_check==1.0", "pyemd>=0.4.4"],
+    install_requires=["gensim>=2.0", "language_check>=1.0", "pyemd>=0.4.4"],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Console',
