@@ -1,12 +1,12 @@
 from setuptools import setup, find_packages
 
-__version_info__ = 1, 0, 2
+__version_info__ = 2, 0, 0
 __version__ = '.'.join(map(str, __version_info__))
 
 setup(
     name="pycontractions",
     version=__version__,
-    description="Intelligently expand and create contractions in English text leveraging grammar checking and Word Mover's Distance.",
+    description="Intelligently expand and create contractions in text leveraging grammar checking and Word Mover's Distance.",
     author="Ian Beaver, Next IT Corp",
     author_email="ibeaver@nextit.com",
     url="https://github.com/ian-beaver/pycontractions",
