@@ -54,23 +54,25 @@ For performance, an optimized version works under the assumption that every inst
 Example usage
 -------------
 
-::
+.. code:: python
 
     >>> from pycontractions import Contractions
-
+    
     # Load your favorite semantic vector model in gensim keyedvectors format from disk
     >>> cont = Contractions('GoogleNews-vectors-negative300.bin')
+    
     # or specify any model from the gensim.downloader api
     >>> cont = Contractions(api_key="glove-twitter-100")
+    
     # or train or load your own keyedvectors model and pass it in
     >>> cont = Contractions(kv_model=mykvmodel)
-
+    
     # optional, prevents loading on first expand_texts call
     >>> cont.load_models() 
 
 The faster less precise version is the default:
 
-::
+.. code:: python
 
     >>> list(cont.expand_texts(["I'd like to know how I'd done that!",
                                 "We're going to the zoo and I don't think I'll be home for dinner.",
@@ -81,7 +83,7 @@ The faster less precise version is the default:
 
 Notice the error in the first text is correct below when using ``precise=True``:
 
-::
+.. code:: python
 
     >>> list(cont.expand_texts(["I'd like to know how I'd done that!",
                                 "We're going to the zoo and I don't think I'll be home for dinner.",
@@ -94,7 +96,7 @@ Notice the error in the first text is correct below when using ``precise=True``:
 
 To insert contractions use the ``contract_texts`` method:
 
-::
+.. code:: python
 
     >>> list(cont.contract_texts(["I would like to know how I had done that!",
                                   "We are not driving to the zoo, it will take too long.",
@@ -107,16 +109,17 @@ To insert contractions use the ``contract_texts`` method:
 
 Performance differences using the ``precise`` version on an Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz:
 
-::
+.. code:: python
+
     >>> cont = Contractions(api_key="glove-twitter-25")
     >>> cont.load_models()
-
+    
     >>> text = "Theyre going to the zoo and she'll be home for dinner."
     >>> %timeit list(cont.expand_texts([text]))
     10 loops, best of 3: 21.4 ms per loop
     >>> %timeit list(cont.expand_texts([text], precise=True))
     10 loops, best of 3: 25.1 ms per loop
-
+    
     # A 349 word movie review    
     >>> len(text.split())
     349
@@ -124,8 +127,7 @@ Performance differences using the ``precise`` version on an Intel(R) Core(TM) i7
     1 loop, best of 3: 1.17 s per loop
     >>> %timeit list(cont.expand_texts([text], precise=True))
     1 loop, best of 3: 2.88 s per loop
-
-
+    
     # Contraction is fast, same 349 word movie review
     >>> %timeit list(cont.contract_texts([text]))
     100 loops, best of 3: 4.77 ms per loop
