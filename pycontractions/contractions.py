@@ -73,7 +73,7 @@ simple_contractions = {
     re.compile(r"\bwe'?d'?ve\b", re.I | re.U): "we would have",
     re.compile(r"\bwe'll\b", re.I | re.U): "we will",
     re.compile(r"\bwe'?ll'?ve\b", re.I | re.U): "we will have",
-    re.compile(r"\bwe'?re\b", re.I | re.U): "we are",
+    re.compile(r"\bwe're\b", re.I | re.U): "we are",
     re.compile(r"\bwe'?ve\b", re.I | re.U): "we have",
     re.compile(r"\bweren'?t\b", re.I | re.U): "were not",
     re.compile(r"\bwhat'?re\b", re.I | re.U): "what are",
