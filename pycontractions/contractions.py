@@ -5,7 +5,6 @@ from gensim.models import KeyedVectors
 from itertools import combinations_with_replacement, permutations
 import language_tool_python
 import os
-import sys
 import re
 
 # Lists derived from https://en.wikipedia.org/wiki/Wikipedia:List_of_English_contractions
@@ -308,8 +307,7 @@ class Contractions(object):
 
         elif self.w2v_path is not None:
             if not os.path.exists(self.w2v_path):
-                print("Word2Vec model not found at {}".format(self.w2v_path))
-                sys.exit(1)
+                raise AttributeError("Word2Vec model not found at {}".format(self.w2v_path))
             try:
                 self.kv_model = KeyedVectors.load_word2vec_format(self.w2v_path, binary=True)
             except:
