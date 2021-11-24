@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-__version_info__ = 2, 0, 1
+__version_info__ = 2, 1, 0
 __version__ = '.'.join(map(str, __version_info__))
 
 setup(
@@ -23,9 +23,7 @@ setup(
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
         'Natural Language :: English',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Topic :: Scientific/Engineering',
