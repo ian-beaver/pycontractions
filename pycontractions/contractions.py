@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 import gensim.downloader as api
 from gensim.models import KeyedVectors
 from itertools import combinations_with_replacement, permutations
-import langauge_check
+import language_check
 import os
 import re
 
@@ -325,7 +325,7 @@ class Contractions(object):
             raise AttributeError("No model given")
 
         try:
-            self.lc_tool = langauge_check.LanguageTool(self.lang_code)
+            self.lc_tool = language_check.LanguageTool(self.lang_code)
         except:
             print("Error initializing LanguageTool")
             raise
